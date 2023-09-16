@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy0maqjdo4wq7"]
+
+[ext_resource type="Script" path="res://Scripts/SandFall.cs" id="1_iw1f5"]
+
+[node name="World" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("cam")]
+centered = false
+script = ExtResource("1_iw1f5")
+imageSize = Vector2i(320, 180)
+cam = NodePath("../Camera2D")
+placementDist = 5
+placementNum = 15
+colorsCatalogue = {
+0: Color(0, 0.666667, 0.560784, 1),
+1: Color(0.545098, 0.380392, 0.219608, 1)
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(4, 4)
