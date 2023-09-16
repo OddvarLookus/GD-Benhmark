@@ -11,11 +11,10 @@ public partial class SandFall : Sprite2D
 
 	[Export] int placementDist = 1;
 	[Export] int placementNum = 1;
-	
-	[Export] Godot.Collections.Dictionary<int, Color> colorsCatalogue = new Godot.Collections.Dictionary<int, Color>();
-	
-	
-	
+
+	[Export] Color[] colorsCatalogue;
+
+
 	[Serializable]
 	enum ColorKeys
 	{
@@ -146,10 +145,11 @@ public partial class SandFall : Sprite2D
 			{
 				if (addedPixels.Contains(i) || removedPixels.Contains(i) || paintedPixels.Contains(i))
 				{
-					imgData[i * 4] = Convert.ToByte(colorsCatalogue[grid[i]].R8);
-					imgData[i * 4 + 1] = Convert.ToByte(colorsCatalogue[grid[i]].G8);
-					imgData[i * 4 + 2] = Convert.ToByte(colorsCatalogue[grid[i]].B8);
-					imgData[i * 4 + 3] = Convert.ToByte(colorsCatalogue[grid[i]].A8);
+					Color col = colorsCatalogue[grid[i]];
+					imgData[i * 4] = Convert.ToByte(col.R8);
+					imgData[i * 4 + 1] = Convert.ToByte(col.G8);
+					imgData[i * 4 + 2] = Convert.ToByte(col.B8);
+					imgData[i * 4 + 3] = Convert.ToByte(col.A8);
 				}
 			}
 			

@@ -7,15 +7,12 @@
 [node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("cam")]
 centered = false
 script = ExtResource("1_iw1f5")
-imageSize = Vector2i(320, 180)
+imageSize = Vector2i(640, 360)
 cam = NodePath("../Camera2D")
 placementDist = 5
 placementNum = 15
-colorsCatalogue = {
-0: Color(0, 0.666667, 0.560784, 1),
-1: Color(0.545098, 0.380392, 0.219608, 1)
-}
+colorsCatalogue = PackedColorArray(0.305882, 0.666667, 0.752941, 1, 0.870588, 0.796078, 0.529412, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
