@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpejm4t7v5nio"]
+
+[ext_resource type="PackedScene" uid="uid://dp0ey1bdpu4kf" path="res://Models/man_reporter_Rig.fbx" id="1_5vnti"]
+[ext_resource type="Texture2D" uid="uid://b3qtjegwu7g3c" path="res://Models/color-atlas-new2.png" id="2_3nmq0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usr78"]
+albedo_texture = ExtResource("2_3nmq0")
+
+[node name="man_reporter_Rig" instance=ExtResource("1_5vnti")]
+
+[node name="man_reporter" parent="RootNode/Group/Main/DeformationSystem/Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_usr78")

@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5x35m21xromu"]
+[gd_scene load_steps=7 format=3 uid="uid://b5x35m21xromu"]
+
+[ext_resource type="PackedScene" uid="uid://bpejm4t7v5nio" path="res://Models/man_reporter_rig.tscn" id="1_idj23"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvt3j"]
 size = Vector3(100, 1, 100)
@@ -37,3 +39,6 @@ shape = SubResource("BoxShape3D_7vxf2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cuberson"]
 mesh = SubResource("BoxMesh_8fr77")
+
+[node name="man_reporter_Rig" parent="." instance=ExtResource("1_idj23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0267, 0.5, 1.18617)
