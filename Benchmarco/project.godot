@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Benchmarco"
-run/main_scene="res://Scenes/world.tscn"
+run/main_scene="res://Scenes/Sand Fall 2D.tscn"
 config/features=PackedStringArray("4.1", "C#", "Mobile")
 config/icon="res://icon.svg"
 

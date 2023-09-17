@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5x35m21xromu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvt3j"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ae50"]
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+albedo_color = Color(0.568627, 0.290196, 0.113725, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_syias"]
+lightmap_size_hint = Vector2i(14, 21)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7vxf2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8fr77"]
+
+[node name="Physics 3D" type="Node"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_uvt3j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_3ae50")
+mesh = SubResource("BoxMesh_syias")
+skeleton = NodePath("../..")
+
+[node name="Cuberson" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39853, 2.57419, -0.0600536)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cuberson"]
+shape = SubResource("BoxShape3D_7vxf2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cuberson"]
+mesh = SubResource("BoxMesh_8fr77")

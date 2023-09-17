@@ -1,12 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://dy0maqjdo4wq7"]
 
-[ext_resource type="Script" path="res://Scripts/SandFall.cs" id="1_iw1f5"]
+[ext_resource type="Script" path="res://Scripts/SandFall.cs" id="1_aa8ds"]
 
-[node name="World" type="Node"]
+[node name="Sand Fall 2D" type="Node"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("cam")]
 centered = false
-script = ExtResource("1_iw1f5")
+script = ExtResource("1_aa8ds")
 imageSize = Vector2i(640, 360)
 cam = NodePath("../Camera2D")
 placementDist = 5
