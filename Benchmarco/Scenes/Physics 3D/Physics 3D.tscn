@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5x35m21xromu"]
+[gd_scene load_steps=8 format=3 uid="uid://b5x35m21xromu"]
 
-[ext_resource type="PackedScene" uid="uid://bpejm4t7v5nio" path="res://Models/man_reporter_rig.tscn" id="1_idj23"]
+[ext_resource type="PackedScene" uid="uid://cs0jhl8e3all6" path="res://Components/FPSLabel.tscn" id="2_l1p1o"]
+[ext_resource type="LabelSettings" uid="uid://cxqyw1snmtbt0" path="res://UI/Label Settings/FPSLabel.tres" id="2_yi1fy"]
+[ext_resource type="Script" path="res://Scripts/KeyPressSpawner.cs" id="3_bggec"]
+[ext_resource type="PackedScene" uid="uid://ucdruveehbcq" path="res://Models/cuberson.tscn" id="4_jk01n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvt3j"]
 size = Vector3(100, 1, 100)
@@ -13,10 +16,6 @@ albedo_color = Color(0.568627, 0.290196, 0.113725, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_syias"]
 lightmap_size_hint = Vector2i(14, 21)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7vxf2"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_8fr77"]
 
 [node name="Physics 3D" type="Node"]
 
@@ -31,17 +30,34 @@ material_override = SubResource("StandardMaterial3D_3ae50")
 mesh = SubResource("BoxMesh_syias")
 skeleton = NodePath("../..")
 
-[node name="Cuberson" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39853, 2.57419, -0.0600536)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cuberson"]
-shape = SubResource("BoxShape3D_7vxf2")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cuberson"]
-mesh = SubResource("BoxMesh_8fr77")
-
-[node name="man_reporter_Rig" parent="." instance=ExtResource("1_idj23")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0267, 0.5, 1.18617)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.634811, 0.772667, 0, -0.772667, 0.634811, -9.06654, 14.8926, 13.0549)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FPS Label" parent="UI" instance=ExtResource("2_l1p1o")]
+layout_mode = 0
+
+[node name="Infos Label" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -401.0
+offset_bottom = 465.0
+grow_horizontal = 0
+label_settings = ExtResource("2_yi1fy")
+autowrap_mode = 3
+
+[node name="Spawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.8284, 0)
+script = ExtResource("3_bggec")
+cubeTemplate = ExtResource("4_jk01n")

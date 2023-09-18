@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy0maqjdo4wq7"]
+[gd_scene load_steps=3 format=3 uid="uid://dy0maqjdo4wq7"]
 
 [ext_resource type="Script" path="res://Scripts/SandFall.cs" id="1_aa8ds"]
+[ext_resource type="PackedScene" uid="uid://cs0jhl8e3all6" path="res://Components/FPSLabel.tscn" id="2_fsud8"]
 
 [node name="Sand Fall 2D" type="Node"]
 
@@ -16,3 +17,5 @@ colorsCatalogue = PackedColorArray(0.305882, 0.666667, 0.752941, 1, 0.870588, 0.
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(2, 2)
+
+[node name="FPS Label" parent="." instance=ExtResource("2_fsud8")]
