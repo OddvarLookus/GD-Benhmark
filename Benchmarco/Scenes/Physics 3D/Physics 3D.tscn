@@ -42,3 +42,6 @@ mesh = SubResource("BoxMesh_8fr77")
 
 [node name="man_reporter_Rig" parent="." instance=ExtResource("1_idj23")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0267, 0.5, 1.18617)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.634811, 0.772667, 0, -0.772667, 0.634811, -9.06654, 14.8926, 13.0549)
