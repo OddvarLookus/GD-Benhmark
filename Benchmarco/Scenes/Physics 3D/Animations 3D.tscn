@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmhmyysl0pv1r"]
+[gd_scene load_steps=8 format=3 uid="uid://cmhmyysl0pv1r"]
 
 [ext_resource type="PackedScene" uid="uid://cs0jhl8e3all6" path="res://Components/FPSLabel.tscn" id="1_w4830"]
 [ext_resource type="LabelSettings" uid="uid://cxqyw1snmtbt0" path="res://UI/Label Settings/FPSLabel.tres" id="2_qn0vs"]
+[ext_resource type="Script" path="res://Scripts/GridSpawner.cs" id="3_pxp6k"]
+[ext_resource type="PackedScene" uid="uid://bpejm4t7v5nio" path="res://Models/man_reporter_rig.tscn" id="4_br0vp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvt3j"]
 size = Vector3(100, 1, 100)
@@ -55,4 +57,9 @@ grow_horizontal = 0
 label_settings = ExtResource("2_qn0vs")
 autowrap_mode = 3
 
-[node name="GridSpawner" type="Node3D" parent="."]
+[node name="GridSpawner" type="Node3D" parent="." node_paths=PackedStringArray("infoLabel")]
+script = ExtResource("3_pxp6k")
+objTemplate = ExtResource("4_br0vp")
+dist = 1.0
+rowNum = 10
+infoLabel = NodePath("../UI/Infos Label")
