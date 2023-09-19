@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmhmyysl0pv1r"]
+[gd_scene load_steps=6 format=3 uid="uid://cmhmyysl0pv1r"]
 
 [ext_resource type="PackedScene" uid="uid://cs0jhl8e3all6" path="res://Components/FPSLabel.tscn" id="1_w4830"]
 [ext_resource type="LabelSettings" uid="uid://cxqyw1snmtbt0" path="res://UI/Label Settings/FPSLabel.tres" id="2_qn0vs"]
-[ext_resource type="Script" path="res://Scripts/KeyPressSpawner.cs" id="3_cuym6"]
-[ext_resource type="PackedScene" uid="uid://ucdruveehbcq" path="res://Models/cuberson.tscn" id="4_th04l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvt3j"]
 size = Vector3(100, 1, 100)
@@ -57,8 +55,4 @@ grow_horizontal = 0
 label_settings = ExtResource("2_qn0vs")
 autowrap_mode = 3
 
-[node name="Spawner" type="Node3D" parent="." node_paths=PackedStringArray("infosLabel")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.8284, 0)
-script = ExtResource("3_cuym6")
-cubeTemplate = ExtResource("4_th04l")
-infosLabel = NodePath("../UI/Infos Label")
+[node name="GridSpawner" type="Node3D" parent="."]
