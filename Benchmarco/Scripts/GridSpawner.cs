@@ -20,7 +20,7 @@ public partial class GridSpawner : Node3D
 			(float)(currentIdx / (rowNum * rowNum)) * dist,
 			(float)((currentIdx % (rowNum * rowNum)) / rowNum) * dist
 		);
-		nPos += (float)(currentIdx / (rowNum * rowNum * rowNum)) * dist * (float)rowNum * Vector3.Right;
+		//nPos += (float)(currentIdx / (rowNum * rowNum * rowNum)) * dist * (float)rowNum * Vector3.Right;
 		
 		Node3D nNode = objTemplate.Instantiate<Node3D>();
 		AddChild(nNode);
